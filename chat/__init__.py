@@ -5,8 +5,7 @@ import eventlet
 eventlet.monkey_patch()
 
 
-from app import create_app, socketio
-import os
+from web_socket import create_app, socketio
 
 application = create_app(debug=True)
 
