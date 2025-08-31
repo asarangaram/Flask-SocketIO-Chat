@@ -5,6 +5,8 @@ dependencies = [
     "flask",
     "flask-socketio",
     "flask-wtf",
+    "eventlet",
+    "gunicorn"
 ]
 
 [project.optional-dependencies]

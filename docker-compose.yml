@@ -16,13 +16,7 @@ services:
                -w 1 -b 0.0.0.0:5000 chat:application
     volumes:
       - ./:/app
-    depends_on:
-      - redis
-    environment:
-      - REDIS_URL=redis://redis:6379/0
     expose:
       - "5000"
 
-  redis:
-    image: redis:alpine
-    restart: always
+

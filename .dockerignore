@@ -22,5 +22,4 @@ docker-compose.yml
 Dockerfile
 LICENSE
 nginx.conf
-pyproject.toml
 README.md

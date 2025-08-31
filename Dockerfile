@@ -1,5 +1,6 @@
 FROM python:3.11-slim
 
+COPY ./ /app
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
@@ -9,11 +10,11 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install pip-tools
+RUN pip-compile --strip-extras ./pyproject.toml    
 
-COPY ./ /app
+RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
