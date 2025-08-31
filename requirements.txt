@@ -44,3 +44,7 @@ wsproto==1.2.0
     # via simple-websocket
 wtforms==3.1.2
     # via flask-wtf
+gevent
+gunicorn
+gevent-websocket
+redis
